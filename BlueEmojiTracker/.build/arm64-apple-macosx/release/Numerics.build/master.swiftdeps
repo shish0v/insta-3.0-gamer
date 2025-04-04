@@ -1,0 +1,7 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "d961f58800b9a2aeb66062c3c84c24cb6dca44d9856ebe3a5e937befc685b08a"
+build_start_time: [1743756954, 136502000]
+build_end_time: [1743756954, 183462000]
+inputs:
+  ? "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/checkouts/swift-numerics/Sources/Numerics/Numerics.swift"
+  : [1743718566, 598217990]

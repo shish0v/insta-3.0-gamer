@@ -1,0 +1,6 @@
+version: "Apple Swift version 6.1 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)"
+options: "0b6e421592e633dd6c90dccc6514ae9e9c57e90ae2ee372084bbe6c83f0709ee"
+build_start_time: [1743767118, 143396000]
+build_end_time: [1743767162, 480952000]
+inputs:
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/main.swift": [1743767059, 152917569]

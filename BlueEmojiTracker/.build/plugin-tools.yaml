@@ -1,0 +1,81 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe": ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe>"]
+  "BlueEmojiTracker-arm64-apple-macosx15.0-debug.module": ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe>","<BlueEmojiTracker-arm64-apple-macosx15.0-debug.module>"]
+  "test": ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe>","<BlueEmojiTracker-arm64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker":
+    is-mutated: true
+commands:
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker-entitlement.plist"]
+    description: "Write auxiliary file /Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker-entitlement.plist"
+
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/main.swift"]
+    outputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/sources"]
+    description: "Write auxiliary file /Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/sources"
+
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/main.swift.o"]
+    outputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.product/Objects.LinkFileList"
+
+  "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe>":
+    tool: phony
+    inputs: ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe-CodeSigning>"]
+    outputs: ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe>"]
+
+  "<BlueEmojiTracker-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/main.swift.o","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/BlueEmojiTracker.swiftmodule"]
+    outputs: ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.module>"]
+
+  "C.BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe":
+    tool: shell
+    inputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/main.swift.o","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.product/Objects.LinkFileList"]
+    outputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/BlueEmojiTracker"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug","-o","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker","-module-name","BlueEmojiTracker","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/usr/lib/swift-5.5/macosx","-target","arm64-apple-macosx10.15","-Xlinker","-add_ast_path","-Xlinker","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/BlueEmojiTracker.swiftmodule","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/Library/Developer/Frameworks"]
+
+  "C.BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker-entitlement.plist"]
+    outputs: ["<BlueEmojiTracker-arm64-apple-macosx15.0-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/BlueEmojiTracker"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker-entitlement.plist","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker"]
+
+  "C.BlueEmojiTracker-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/main.swift","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/sources"]
+    outputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/main.swift.o","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/BlueEmojiTracker.swiftmodule"]
+    description: "Compiling Swift Module 'BlueEmojiTracker' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","BlueEmojiTracker","-emit-dependencies","-emit-module","-emit-module-path","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/BlueEmojiTracker.swiftmodule","-output-file-map","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/output-file-map.json","-incremental","-c","@/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/BlueEmojiTracker.build/sources","-I","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.15","-enable-batch-mode","-index-store-path","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j10","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/Package.swift","/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

@@ -1,0 +1,13 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "af0fd7df66316db7158ac72d445e0282e7cf2a0486cb4932dee0fdfe09902474"
+build_start_time: [1743756953, 674802000]
+build_end_time: [1743756954, 46359000]
+inputs:
+  ? "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/checkouts/swift-numerics/Sources/ComplexModule/Arithmetic.swift"
+  : [1743718566, 596309189]
+  ? "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/checkouts/swift-numerics/Sources/ComplexModule/Complex.swift"
+  : [1743718566, 596996609]
+  ? "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/checkouts/swift-numerics/Sources/ComplexModule/Differentiable.swift"
+  : [1743718566, 597134735]
+  ? "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/checkouts/swift-numerics/Sources/ComplexModule/ElementaryFunctions.swift"
+  : [1743718566, 597424820]
