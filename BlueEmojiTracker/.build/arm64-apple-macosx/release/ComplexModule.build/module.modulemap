@@ -1,4 +1,0 @@
-module ComplexModule {
-    header "/Users/shishov/Desktop/all Cursor /insta 3.0 gamer/BlueEmojiTracker/.build/arm64-apple-macosx/release/ComplexModule.build/ComplexModule-Swift.h"
-    requires objc
-}
