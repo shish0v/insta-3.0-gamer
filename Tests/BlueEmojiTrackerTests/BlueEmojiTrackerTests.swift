@@ -1,3 +1,4 @@
+#if os(macOS)
 import XCTest
 @testable import BlueEmojiTracker
 
@@ -26,4 +27,4 @@ final class BlueEmojiTrackerTests: XCTestCase {
         ("testConfigDefaults", testConfigDefaults),
         ("testWindowManagerGetActiveWindows", testWindowManagerGetActiveWindows),
     ]
-} 
+} #endif

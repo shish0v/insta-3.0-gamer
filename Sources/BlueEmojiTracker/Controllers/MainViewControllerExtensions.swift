@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 
 extension MainViewController {
@@ -342,4 +343,4 @@ class DebugOverlayView: NSView {
         borderPath.lineWidth = 2.0
         borderPath.stroke()
     }
-} 
+} #endif

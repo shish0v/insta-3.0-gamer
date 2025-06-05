@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 
 /// Главный контроллер представления для интерфейса приложения
@@ -157,4 +158,4 @@ class MainViewController: NSViewController {
         
         Logger.shared.log("Отслеживание остановлено")
     }
-} 
+} #endif
