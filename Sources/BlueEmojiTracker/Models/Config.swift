@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 
 struct Config {
@@ -234,4 +235,4 @@ struct Config {
             return false
         }
     }
-} 
+} #endif

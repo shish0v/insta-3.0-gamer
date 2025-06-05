@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 
 extension MainViewController {
@@ -481,4 +482,4 @@ extension MainViewController {
         // Обновляем позицию Y для следующего элемента
         yPos -= 50 + 10
     }
-} 
+} #endif

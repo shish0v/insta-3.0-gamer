@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 
 // Создание и настройка главного контроллера
@@ -45,4 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 let app = NSApplication.shared
 let delegate = AppDelegate()
 app.delegate = delegate
-app.run() 
+app.run()
+#else
+print("BlueEmojiTracker can only run on macOS")
+#endif

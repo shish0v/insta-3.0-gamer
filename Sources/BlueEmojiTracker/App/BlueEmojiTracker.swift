@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 import simd
 
@@ -437,4 +438,4 @@ class BlueEmojiTracker {
             }
         }
     }
-} 
+} #endif

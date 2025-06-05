@@ -1,3 +1,4 @@
+#if os(macOS)
 import Cocoa
 
 class WindowManager {
@@ -104,4 +105,4 @@ class WindowManager {
         updateCache()
         return windowCache[windowID]
     }
-} 
+} #endif
