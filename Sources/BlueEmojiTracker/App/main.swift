@@ -1,47 +1,33 @@
 import Cocoa
+import SwiftUI
 
-// Создание и настройка главного контроллера
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var window: NSWindow!
-    private var mainViewController: MainViewController!
-    
+
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Создаем основное окно
-        let windowRect = NSRect(x: 100, y: 100, width: 650, height: 650)
         window = NSWindow(
-            contentRect: windowRect,
-            styleMask: [.titled, .closable, .miniaturizable],
+            contentRect: NSRect(x: 0, y: 0, width: 600, height: 600),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable],
             backing: .buffered,
             defer: false
         )
-        
-        window.title = "Blue Emoji Tracker \(Config.appVersion)"
         window.center()
+        window.title = "Blue Emoji Tracker"
         
-        // Создаем и настраиваем контроллер
-        mainViewController = MainViewController()
+        let mainView = MainView()
+        window.contentView = NSHostingView(rootView: mainView)
         
-        // Устанавливаем представление контроллера как содержимое окна
-        window.contentView = mainViewController.view
-        
-        // Отображаем окно
         window.makeKeyAndOrderFront(nil)
         
-        // Загружаем настройки из файла
-        Config.loadSettings()
-        
-        // Логируем запуск
-        Logger.shared.log("Приложение запущено. Версия: \(Config.appVersion)")
+        Logger.shared.log("Приложение запущено с SwiftUI интерфейсом.")
     }
-    
-    func applicationWillTerminate(_ notification: Notification) {
-        // Сохраняем настройки при выходе
+
+    func applicationWillTerminate(_ aNotification: Notification) {
         Config.saveSettings()
-        Logger.shared.log("Приложение завершено")
+        Logger.shared.log("Приложение завершено.")
     }
 }
 
-// Запуск приложения
 let app = NSApplication.shared
 let delegate = AppDelegate()
 app.delegate = delegate
